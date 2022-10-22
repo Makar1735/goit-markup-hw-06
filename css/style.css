@@ -939,22 +939,33 @@ overflow: hidden;
     flex-direction: column;
     gap: 4px;
      margin-bottom: 10px; 
+     
 }
+ .modal-text:last-child {
+    margin: 0;
+} 
+
 .modal-input {
    width: 100%;
    padding: 10px; 
    padding-left: 42px;
    border: 1px solid rgba(33, 33, 33, 0.2);
    border-radius: 4px;
+    outline: transparent;
    
+}
+.modal-input:focus,
+.modal-comment:focus {
+    border: 1px solid var(--accent-color);
+
+}
+.modal-input:focus + .modal-icon {
+    fill: var(--accent-color);
 }
 .modal-wrap {
 position: relative;
 }
-.modal-label:focus + .modal-input {
 
-      
-}
 
 .modal-icon {
     position: absolute;
@@ -971,19 +982,77 @@ position: relative;
 
     letter-spacing: 0.01em;
     color: #757575;
+    
+    
 }
 .modal-comment {
     width: 100%;
     height: 120px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+   padding: 12px 16px;
+    outline: transparent;
+    
 }
+/* ---------CHECK-BOX------------- */
+.checkbox-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.label-check{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Roboto'sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.03em;
+        color: #757575;
+           
+}
+.label-check span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 15px;
+    border: 2px solid #212121;
+    border-radius: 2px;
+    margin-right: 10px;
+    fill: transparent;
+    
+
+}
+.input-check:checked + .label-check span {
+background-color: var(--accent-color);
+border-color: transparent;
+fill: var(--fons-color);
+
+}
+.input-check:focus +.label-check span {
+    border-color: var(--accent-color)
+}
+
+ .police-text {
+       
+        font-size: 14px;
+        line-height: 1.71;
+        letter-spacing: 0.03em;
+        color: var(--accent-color);
+       
+} 
+/* ---------batton btn---------------- */
 .btn-comment {
     padding-bottom: 10px;
     padding-top: 10px;
     padding-left: 52px;
     padding-right: 52px;
     margin: 0 auto;
+    margin-top: 30px;
     
         font-style: normal;
         font-weight: 700;
@@ -999,6 +1068,7 @@ position: relative;
     background: #188CE8;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
+        cursor: pointer;
 }
 
 .backdrop.is-hidden.modal {
